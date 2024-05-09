@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Читатели</h1>
+
+{% for reader in readers %}
+
+{% include "components/reader-item.html" %}
+
+{% endfor %}
+
+{% include "components/pagination-item.html" %}
+
+{% endblock %}

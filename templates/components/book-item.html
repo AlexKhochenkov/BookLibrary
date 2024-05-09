@@ -1,0 +1,29 @@
+{% load static %}
+<div class="row question">
+    <div class="col-3">
+      <img src="{% static '/img/book.jpeg' %}" alt="FirstQuestionImg" class="p-1 question-image">
+      <div class="p-1 row justify-content-center">
+        <div class="col-3 align-self-center">
+          <span>Доступно: {{ book.raiting }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-9 d-flex flex-column position-static">
+      <div class="question-title mb-1">
+        <a href="{% url 'book' book_id=book.id %}">{{ book.title }}</a>
+      </div>
+      <div class="question-text text-truncate mb-auto">
+        {{ book.content }}
+      </div>
+      Author: {{ book.author }}
+        <div class="row align-items-end">
+          <div class="col-4 mb-2">
+            <a href="{% url 'book' book_id=book.id %}">Аренды</a>
+          </div>
+          <div class="col-8 mb-2">
+            Жанр: 
+            <a href="{% url 'genres' genre_name=book.genres %}">{{ book.genres }}</a>
+          </div>
+        </div>
+    </div>
+  </div>

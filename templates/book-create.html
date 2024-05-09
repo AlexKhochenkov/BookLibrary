@@ -1,0 +1,82 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+    
+    
+    
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+
+<h1 class="one-question-title mt-5 ms-2">Новая книга</h1>
+<div class='row'>
+  <a href="{% url 'adminka' %}" class="question-title link-primary ms-2 mb-1">Вернуться</a>
+</div>
+
+{% load django_bootstrap5 %}
+<div class='row'>
+    <div class='col-9 ms-2'>
+
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form  form %}
+    <button type="submit" class="btn btn-primary mt-5">Создать</button>
+  </form>
+</div>
+</div>
+</main>
+<footer class="footer mt-3 py-3 bg-light">
+  <div class="row mb-2">
+    <div class="col-8">
+      <div class="container mt-4">
+        <span class="text-muted">Спасибо что выбираете нас!</span>
+      </div>
+      <div class="container mt-2 corp">
+        <span class="text-muted">Book Corp. 2023</span>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="container mt-2">
+        <img src="{% static '/img/Map_adress.jpeg' %}" alt="FirstQuestionImg" class="img-fluid">
+      </div>
+      <div class="container mt-4">
+        <span class="text-muted">Наш адрес: ул. Сухонская, д. 4, к. 1</span>
+      </div>
+  </div>
+</div>
+</footer>
+
+
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<script src="{% static  '/js/bootstrap.bundle.min.js' %}"></script>
+
+
+</body>
+</html>

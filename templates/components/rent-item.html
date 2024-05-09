@@ -1,0 +1,29 @@
+{% load static %}
+<div class="row answer">
+    <div class="col-3">
+      <img src="../static/img/Rent.png" alt="FirstQuestionImg" class="p-1 question-image">
+      <div class="p-1 row justify-content-center">
+        {% if book %}
+          <a class="btn btn-outline-danger btn-sm" href={% url 'delete_rent_b' rent_id=rent.id book_id=book.id %} type="submit">Delete!</a>
+          {% else %}
+          <a class="btn btn-outline-danger btn-sm" href={% url 'delete_rent_r' rent_id=rent.id reader_id=reader.id %} type="submit">Delete!</a>
+          {% endif %}
+      </div>
+    </div>
+    <div class="col-9 d-flex flex-column position-static">
+      <div class="question-text mb-auto">{{ rent.bookinstance.book }}</div>
+          <div class="row align-items-end">
+            <div class="col-6">
+            Читатель: {{ rent.reader }}
+            </div>
+            <div class="col-6">
+            Сотрудник: {{ rent.user }}
+            </div>
+          </div>
+          <div class="row align-items-end">
+            <div class="col-6">
+            Дата взятия: {{ rent.date_taken }}
+            </div>
+        </div>
+    </div>
+  </div>

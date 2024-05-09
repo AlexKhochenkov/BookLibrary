@@ -1,0 +1,7 @@
+{% load static %}
+
+<span class="badge bg-warning">
+    <a href="{% url 'genres' genre_name=genre.name %}" class='link-danger link-underline link-underline-opacity-0 link-underline-opacity-100-hover'>
+        {{ genre.name }} ({{genre.books.count}})
+    </a>
+</span>

@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+{% include 'components/reader-item.html' %}
+
+<hr/>
+
+{% if rents %}
+
+{% for rent in rents %}
+
+{% include "components/rent-item.html" %}
+
+{% endfor %}
+
+{% include "components/pagination-item.html" %}
+
+{% else %}
+
+Аренд нет!
+
+{% endif %}
+
+{% endblock %}

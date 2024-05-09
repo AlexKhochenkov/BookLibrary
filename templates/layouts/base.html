@@ -1,0 +1,150 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+    
+    
+    
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+    
+<header>
+    <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid justify-content-between">
+        <div class="col-1">
+        <img src="{% static '/img/Book.png' %}" alt="FirstQuestionImg" class="avatar">
+        </div>
+      <a class="navbar-brand" href="{% url 'index' %}">The Book<b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class=" collapse navbar-collapse flex-fill" id="navbarCollapse">
+          
+        <div class="flex-shrink-0">
+          {% if not user.is_authenticated %}
+          <div class="col-12 me-4">
+            <a class="btn btn-outline-danger" href="{% url 'login' %}" type="submit">Log in</a>
+          </div>
+          {% else %}
+          <div class="row">
+            <div class="col-5">
+              <img src="../static/img/Question.jpeg" alt="Avatar" class="avatar">
+            </div>
+            <div class="col-7">
+                <div class="row">
+                <span class="nickname text-light">{{request.user.username}}</span>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                  <a class="btn btn-outline-danger" href="{% url 'login' %}" type="submit">Log out</a>
+                </div>
+              </div>
+            </div>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        {% block content %}
+
+            Hello, it is empty block!
+
+        {% endblock %}
+        </div>
+      <!--RIGHT SIDE-->
+      <div class="col-4">
+        <div class="row">
+          <a href="{% url 'books' %}" class="question-title link-primary">Книги</a>
+        </div>
+      <hr/>
+          <h2>По жанру</h2>
+          <div class="genres mb-2">
+              
+            {% for genre in genres %}
+
+            {% include 'components/genre-item.html' %}
+
+            {% endfor %}
+
+          </div>
+        <hr/>
+        <a href="{% url 'readers' %}" class="question-title link-primary">Список читателей</a>
+        <hr/>
+        <div class='row'>
+          <div class='col-8'>
+        <a class="btn btn-outline-primary btn-lg mt-1" href="{% url 'rent_create' %}" type="submit">Cоздать аренду</a>
+          </div>
+      </div>
+    <hr/>
+        <div class='row'>
+          <div class='col-8'>
+          <a class="btn btn-outline-primary btn-lg mt-1" href="{% url 'reader_create' %}" type="submit">Добавить читателя</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer mt-3 py-3 bg-light">
+  <div class="row mb-2">
+    <div class="col-8">
+      <div class="container mt-4">
+        <span class="text-muted">Спасибо что выбираете нас!</span>
+      </div>
+      <div class="container mt-2 corp">
+        <span class="text-muted">Book Corp. 2023</span>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="container mt-2">
+        <img src="{% static '/img/Map_adress.jpeg' %}" alt="FirstQuestionImg" class="img-fluid">
+      </div>
+      <div class="container mt-4">
+        <span class="text-muted">Наш адрес: ул. Сухонская, д. 4, к. 1</span>
+      </div>
+  </div>
+</div>
+</footer>
+
+
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<script src="{% static  '/js/bootstrap.bundle.min.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="one-question-title">Библиотека "Книга"</h1>
+
+<div class="row question align-items-center p-4">
+    <div class="col-3">
+        <img src="{% static '/img/titul_1.jpeg' %}" alt="FirstQuestionImg" class="img-fluid p-1">
+    </div>
+    <div class="col-9 d-flex flex-column position-static">
+        <div class="question-title mb-1">
+            <h2>Кто мы?</h2>
+        </div>
+        <div class="question-text mb-auto">
+            Мы - учреждение, собирающее и осуществляющее хранение произведений печати и письменности для общественного пользования, а также ведущее справочно-библиографическую работу. В настоящее время всё большее количество книг оцифровываются и хранятся на электронных носителях, некоторые книги не печатаются и в бумажном виде их нет. 
+        </div>
+    </div>
+</div>
+<div class="row question align-items-center p-4">
+    <div class="col-9 d-flex flex-column position-static">
+        <div class="question-title mb-1">
+            <h2>Наше назначение</h2>
+        </div>
+        <div class="question-text mb-auto">
+            Основной целью деятельности библиотеки "Книга" является создание современного уровня информационного обеспечения образовательной, научной и исследовательской деятельности, осуществление оперативного доступа пользователей к фонду библиотеки, включающему печатные, аудиовизуальные, электронные документы.
+        </div>
+    </div>
+    <div class="col-3">
+        <img src="{% static '/img/titul_2.jpeg' %}" alt="FirstQuestionImg" class="img-fluid p-1">
+    </div>
+</div>
+<div class="row question align-items-center p-4">
+    <div class="col-3">
+        <img src="{% static '/img/titul_3.jpeg' %}" alt="FirstQuestionImg" class="img-fluid p-1">
+    </div>
+    <div class="col-9 d-flex flex-column position-static">
+        <div class="question-title mb-1">
+            <h2>Наши книги</h2>
+        </div>
+        <div class="question-text mb-auto">
+            Библиотека обладает уникальной коллекцией редких книг, изданных в XVII — начале XX вв. Многие издания в ветхом состоянии без обложек и титульных листов. При в введении этих книг в электронный каталог, сотрудники применяют различные методы атрибуции текстов, чтобы идентифицировать эти издания. Уникальная коллекция редких старопечатных изданий из фонда библиотеки дважды была представлена на выставках.
+        </div>
+    </div>
+</div>
+
+{% endblock %}

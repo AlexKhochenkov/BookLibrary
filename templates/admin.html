@@ -1,0 +1,90 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+    
+    
+    
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <div class="row">
+            <div class="col-5 mt-5 mb-2 ms-2">
+            <a class="btn btn-outline-warning" href="{% url 'login' %}" type="submit">Log out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 mt-5 mb-2 ms-2">
+            <a class="btn btn-outline-primary " href="{% url 'book_create' %}" type="submit">Добавить книгу</a>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-5 mt-5 mb-2 ms-2">
+            <a class="btn btn-outline-primary " href="{% url 'user_create' %}" type="submit">Добавить сотрудника</a>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-5 mt-5 mb-2 ms-2">
+            <a class="btn btn-outline-danger " href="{% url 'books_adminka' %}" type="submit">Удалить книгу</a>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-5 mt-5 mb-2 ms-2">
+            <a class="btn btn-outline-danger " href="{% url 'users' %}" type="submit">Удалить сотрудника</a>
+        </div>
+        </div>
+    </main>
+    <footer class="footer mt-3 py-3 bg-light">
+        <div class="row mb-2">
+          <div class="col-8">
+            <div class="container mt-4">
+              <span class="text-muted">Спасибо что выбираете нас!</span>
+            </div>
+            <div class="container mt-2 corp">
+              <span class="text-muted">Book Corp. 2023</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="container mt-2">
+              <img src="{% static '/img/Map_adress.jpeg' %}" alt="FirstQuestionImg" class="img-fluid">
+            </div>
+            <div class="container mt-4">
+              <span class="text-muted">Наш адрес: ул. Сухонская, д. 4, к. 1</span>
+            </div>
+        </div>
+      </div>
+      </footer>
+      
+      
+      <script src="{% static '/js/bootstrap.js' %}"></script>
+      <script src="{% static  '/js/bootstrap.bundle.min.js' %}"></script>
+      
+      
+      </body>
+      </html>

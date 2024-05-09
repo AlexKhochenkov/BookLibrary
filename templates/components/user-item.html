@@ -1,0 +1,16 @@
+{% load static %}
+<div class="row question">
+    <div class="col-3">
+      <img src="{% static '/img/Reader.png' %}" alt="FirstQuestionImg" class="p-1 question-image">
+    </div>
+    <div class="col-9 d-flex flex-column position-static">
+      <div class="question-title mb-1">
+        {{ user.username }}
+      </div>
+        <div class="row">
+          <div class="col-4 mb-2">
+            <a class="btn btn-outline-danger btn-sm" href={% url 'delete_user' user_id=user.id %} type="submit">Delete!</a>
+          </div>
+        </div>
+    </div>
+  </div>

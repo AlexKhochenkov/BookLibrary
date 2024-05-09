@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Genre: {{genre}}</h1>
+
+{% for book in books %}
+
+{% include "components/book-item.html" %}
+
+{% endfor %}
+
+{% include "components/pagination-item.html" %}
+
+{% endblock %}
